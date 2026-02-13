@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" 
+  content="width=device-width, initial-scale=1.0">
+  <title>Packages - Sri Om Travels</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo-box">
+    <img src="images/logo.png">
+    <div class="logo-text">
+      <h1>SRI OM TRAVELS</h1>
+      <span>ARUPADAI VEEDU YATRA</span>
+      <p>India Certified Tour Agency</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>ARUPADAI VEEDU TOUR PACKAGE</h2>
+  <p>Premium Divine Experience</p>
+
+  <div class="includes-box">
+    <div class="include-grid">
+
+      <div class="card">
+        🏨 Luxury A/C Hotel <br>
+        <span>Breakfast Included</span>
+      </div>
+
+      <div class="card">
+        🚗 Private A/C Vehicle <br>
+        <span>Comfort Travel</span>
+      </div>
+
+      <div class="card">
+        🛕 VIP Temple Darshan <br>
+        <span>Special Assistance</span>
+      </div>
+
+      <div class="card">
+        👨‍✈️ Professional Driver <br>
+        <span>Experienced Guide</span>
+      </div>
+
+      <div class="card">
+        💧 Water & Refreshments <br>
+        <span>Daily Supply</span>
+      </div>
+
+    </div>
+  </div>
+
+  <br><br>
+
+  <h3 style="color:gold;">Pricing Per Person</h3>
+
+  <table style="margin-top:20px;border-collapse:collapse;">
+    <tr>
+      <th style="border:1px solid gold;padding:10px;">PAX</th>
+      <th style="border:1px solid gold;padding:10px;">Price (SGD)</th>
+    </tr>
+
+    <tr><td style="border:1px solid gold;padding:10px;">1</td><td style="border:1px solid gold;padding:10px;">700</td></tr>
+    <tr><td style="border:1px solid gold;padding:10px;">2</td><td style="border:1px solid gold;padding:10px;">650</td></tr>
+    <tr><td style="border:1px solid gold;padding:10px;">4</td><td style="border:1px solid gold;padding:10px;">600</td></tr>
+    <tr><td style="border:1px solid gold;padding:10px;">6</td><td style="border:1px solid gold;padding:10px;">550</td></tr>
+    <tr><td style="border:1px solid gold;padding:10px;">8</td><td style="border:1px solid gold;padding:10px;">500</td></tr>
+    <tr><td style="border:1px solid gold;padding:10px;">10</td><td style="border:1px solid gold;padding:10px;">450</td></tr>
+
+  </table>
+
+  <div class="contact-btns">
+  <a href="https://wa.me/+6583725396" target="_blank" class="whatsapp">
+    Book via WhatsApp
+  </a>
+
+  <a href="tel:+919876543210" class="call">
+    Call Now
+  </a>
+  
+</div>
+
+ 
+
+</div>
+
+</section>
+
+<section class="booking">
+  <h2>Book Your Temple Package</h2>
+
+  <form id="bookingForm">
+
+    <input type="text" id="name" placeholder="Your Name" required>
+
+    <input type="tel" id="phone" placeholder="Contact Number" required>
+
+    <input type="date" id="date" required>
+
+    <input type="number" id="pax" placeholder="Number of Pax" required>
+
+    <button type="submit">Book Now</button>
+
+  </form>
+</section>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+    e.preventDefault(); // stop page reload
+
+    var name = document.getElementById("name").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var date = document.getElementById("date").value;
+    var pax = document.getElementById("pax").value;
+
+    if(name === "" || phone === "" || date === "" || pax === ""){
+        alert("Please fill all fields");
+        return;
+    }
+
+    var message = "New Temple Package Booking:%0A"
+                + "Name: " + name + "%0A"
+                + "Contact: " + phone + "%0A"
+                + "Travel Date: " + date + "%0A"
+                + "Pax: " + pax;
+
+    var whatsappNumber = "9080014911"; //  YOUR NUMBER
+
+    var url = "https://api.whatsapp.com/send?phone=" + whatsappNumber + "&text=" + message;
+
+    window.open(url, "_blank"); // Opens WhatsApp in new tab
+});
+</script>
+
+
+</body>
+</html>
